@@ -34,7 +34,7 @@ class AlienInvasion:
         self.bullets = Group()
 
         self.aliens = Group()
-        gf.create_fleet(self.settings, self.screen, self.ship,  self.aliens)
+        gf.create_fleet(self.settings, self.stats, self.screen, self.ship, self.aliens)
 
 
     def run_game(self):

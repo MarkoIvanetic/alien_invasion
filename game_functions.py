@@ -18,7 +18,7 @@ def check_play_button(ai_settings, ship, screen, stats, play_button, aliens, bul
         stats.reset_stats()
         aliens.empty()
         bullets.empty()
-        create_fleet(ai_settings, screen, ship, aliens)
+        create_fleet(ai_settings, stats, screen, ship, aliens)
         ship.center_ship()
 
 def check_events(ai_settings, screen, stats, button, aliens, ship, bullets):
@@ -68,8 +68,8 @@ def update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets):
             if bullet.rect.bottom <= 0:
                 bullets.remove(bullet)
 
-        # collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
-        collisions = pygame.sprite.groupcollide(bullets, aliens, False, True)
+        collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
+        # collisions = pygame.sprite.groupcollide(bullets, aliens, False, True)
 
         if collisions:
             for aliens in collisions.values():
